@@ -17,6 +17,7 @@ params = {
 bot = telegram_chatbot("config.cfg")
 pattern='magnet:\?xt=urn:btih:[a-zA-Z0-9]*'
 def make_reply(msg):
+    reply = None
     result=re.match(pattern,msg)
     if result:
         print(msg)
@@ -49,7 +50,7 @@ def make_reply(msg):
         print("Elapsed Time: ",int((end-begin)//60),"min :", int((end-begin)%60), "sec")
 
         print(datetime.datetime.now())
-        reply='Download Finished You can find downloaded file @ https://drive.google.com/drive/folders/1OXqhU4UX0e_eEcQME6ZG_GFB03ioknjb?usp=sharing'
+        reply='Download Finished You can find downloaded file @ ' #to create variable link 
 
     return reply
 
